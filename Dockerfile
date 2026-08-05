@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 
 
 
-COPY . .
+COPY . /app
 
 RUN uv sync
 
@@ -22,4 +22,4 @@ ENV PATH="/app/.venv/bin:$PATH"
 
 EXPOSE 8000
 
-CMD ["uv", "run" "uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uv", "run", "uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
