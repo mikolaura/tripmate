@@ -18,7 +18,7 @@ COPY . .
 
 RUN uv sync
 
-RUN .venv\Scripts\Activate.ps1
+ENV PATH="/app/.venv/bin:$PATH"
 
 EXPOSE 8000
 
